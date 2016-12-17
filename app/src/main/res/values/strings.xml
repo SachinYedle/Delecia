@@ -1,3 +1,28 @@
 <resources>
     <string name="app_name">Delecia</string>
+
+    <!-- Progress Dialog-->
+    <string name="loading">Loading data...</string>
+
+    <!-- Strings related to login -->
+    <string name="have_an_account">I already have an Account</string>
+    <string name="email">Email</string>
+    <string name="password">Password (6-15 chars)</string>
+    <string name="login">LOGIN</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="new_here_register">Dont have account?</string>
+    <string name="register">Sign Up?</string>
+    <string name="forgot_password_dialog_text">Enter your registered email ID.\nA link to reset password\nwill be sent.</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="sign_up">SIGN UP</string>
+
+    <!--Registration screen strings-->
+    <string name="registration_form">Registration Form</string>
+    <string name="name">Name</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="address">Address (optional)</string>
+    <string name="already_have_account">Already have an account</string>
+    <string name="login_text">Login</string>
+
 </resources>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.delecia.ui.activities.MainActivity">
+
+    <include layout="@layout/toolbar_layout"/>
+
+    <LinearLayout
+        android:id="@+id/email_login_form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin">
+
+
+        <ImageView
+            android:layout_width="@dimen/image_view_size"
+            android:layout_height="@dimen/image_view_size"
+            android:layout_marginTop="@dimen/margin_xlarge"
+            android:src="@mipmap/ic_launcher" />
+
+        <EditText
+            android:id="@+id/phone_editText"
+            style="@style/edit_text_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/icon_phone"
+            android:drawableStart="@drawable/icon_phone"
+            android:hint="@string/phone_number"
+            android:inputType="phone" />
+
+
+
+        <EditText
+            android:id="@+id/password_editText"
+            style="@style/edit_text_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="0dp"
+            android:drawableLeft="@drawable/icon_password"
+            android:drawableStart="@drawable/icon_password"
+            android:hint="@string/password"
+            android:imeActionId="@+id/login"
+            android:imeActionLabel="@string/sign_in"
+            android:imeOptions="actionUnspecified"
+            android:inputType="textPassword"
+            android:maxLength="15" />
+
+
+        <Button
+            android:id="@+id/log_in_button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="@dimen/login_button_field_margin"
+            android:background="@color/green"
+            android:text="@string/login"
+            android:textColor="@color/font_color"
+            android:textSize="@dimen/button_text_size" />
+
+        <TextView
+            android:id="@+id/forgot_pwd_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/login_button_field_margin"
+            android:text="@string/forgot_password"
+            android:textColor="@color/font_color"
+            android:textSize="@dimen/button_text_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="@dimen/margin_xlarge"
+            android:text="@string/new_here_register"
+            android:textColor="@color/hint_color"
+            android:textSize="@dimen/button_text_size" />
+
+        <TextView
+            android:id="@+id/register_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="@string/register"
+            android:textColor="@color/font_color"
+            android:textSize="@dimen/button_text_size" />
+
+    </LinearLayout>
+</LinearLayout>
+
+
+
