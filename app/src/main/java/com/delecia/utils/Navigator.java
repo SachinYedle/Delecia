@@ -12,8 +12,8 @@ import com.delecia.R;
 public class Navigator {
     public static void navigateToRegisterFragment(FragmentManager fragmentManager){
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        ContactsFragment contactsFragment = new ContactsFragment();
-        fragmentTransaction.replace(R.id.map,contactsFragment);
+        /*ContactsFragment contactsFragment = new ContactsFragment();
+        fragmentTransaction.replace(R.id.map,contactsFragment);*/
         fragmentTransaction.addToBackStack("contacts");
         fragmentTransaction.commit();
     }
