@@ -23,6 +23,7 @@
             android:layout_width="@dimen/image_view_size"
             android:layout_height="@dimen/image_view_size"
             android:layout_marginTop="@dimen/margin_xlarge"
+            android:scaleType="center"
             android:src="@mipmap/ic_launcher" />
 
         <EditText
@@ -60,7 +61,7 @@
             android:layout_marginTop="@dimen/login_button_field_margin"
             android:background="@color/green"
             android:text="@string/login"
-            android:textColor="@color/font_color"
+            android:textColor="@color/white"
             android:textSize="@dimen/button_text_size" />
 
         <TextView
@@ -93,6 +94,4 @@
 
     </LinearLayout>
 </LinearLayout>
-
-
 

@@ -6,7 +6,6 @@ package com.delecia.retrofit.responses;
 
 public class LoginResponse {
     private String data;
-    private String phone;
 
     public void setData(String data) {
         this.data = data;

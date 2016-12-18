@@ -4,6 +4,7 @@ import android.content.Context;
 import android.widget.Toast;
 
 import com.delecia.app.MyApplication;
+import com.delecia.interfaces.TaskCompletedListener;
 import com.delecia.retrofit.responses.LoginResponse;
 import com.delecia.retrofit.services.UserDataService;
 import com.delecia.utils.CustomLog;
@@ -19,11 +20,11 @@ import retrofit2.Response;
 
 public class UserDataMapper {
 
-    private OnLoginListener onLoginListener;
+    private TaskCompletedListener taskCompletedListener;
 
-    public void login(OnLoginListener listener, String email, String phone){
+    public void login(TaskCompletedListener listener, String email, String phone){
         if (MyApplication.getInstance().isConnectedToInterNet()){
-            this.onLoginListener = listener;
+            this.taskCompletedListener = listener;
             UserDataService userDataService = MyApplication.getInstance().getUserDataService();
             Call<LoginResponse> call = userDataService.login(email,phone);
             call.enqueue(loginResponseCallback);
@@ -37,25 +38,28 @@ public class UserDataMapper {
                                        Response<LoginResponse>
                                                response) {
                     if (response.code() == 401) {
-                        onLoginListener.onTaskFailed("session expired");
+                        taskCompletedListener.onTaskFailed("session expired");
                     } else if (response.code() == 504) {
-                        onLoginListener.onTaskFailed("Unknown host");
+                        taskCompletedListener.onTaskFailed("Unknown host");
                     } else if (response.isSuccessful()) {
-                        CustomLog.i("Response",""+response);
-                        onLoginListener.onTaskCompleted(response.body());
+                        CustomLog.i("Response",""+response.body().getData());
+                        taskCompletedListener.onTaskCompleted(response.body());
                     }
 
                 }
 
                 @Override
                 public void onFailure(Call<LoginResponse> call, Throwable t) {
-                    CustomLog.e("UserAutToken callback","user info data service error");
+                    taskCompletedListener.onTaskFailed("Network Connection Error");
+                    CustomLog.e("login callback","user info data service error");
                 }
             };
-
-    public interface OnLoginListener {
-        void onTaskCompleted(LoginResponse loginResponse);
-
-        void onTaskFailed(String request);
+    public void register(TaskCompletedListener listener, String name, String phone,String email,String password){
+        if (MyApplication.getInstance().isConnectedToInterNet()){
+            this.taskCompletedListener = listener;
+            UserDataService userDataService = MyApplication.getInstance().getUserDataService();
+            Call<LoginResponse> call = userDataService.register(name,phone,email,password);
+            call.enqueue(loginResponseCallback);
+        }
     }
 }

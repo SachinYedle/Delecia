@@ -16,4 +16,10 @@ public interface UserDataService {
     @POST("delecia/public/login")
     Call<LoginResponse> login(@Field("phone") String phone,
                               @Field("password") String password);
+    @FormUrlEncoded
+    @POST("delecia/public/login/register")
+    Call<LoginResponse> register(@Field("name") String name,
+                                 @Field("phone") String phone,
+                                 @Field("email") String email,
+                                 @Field("password") String password);
 }
